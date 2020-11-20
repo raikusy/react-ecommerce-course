@@ -2,9 +2,9 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import loadable from '@loadable/component';
 
-const Home = loadable(() => import('./pages/Home'));
-const Product = loadable(() => import('./pages/Product'));
-const Checkout = loadable(() => import('./pages/Checkout'));
+const Home = loadable(() => import('../pages/Home'));
+const Product = loadable(() => import('../pages/Product'));
+const Checkout = loadable(() => import('../pages/Checkout'));
 
 // const routes = [
 //   {
