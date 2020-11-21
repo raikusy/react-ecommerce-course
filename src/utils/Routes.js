@@ -18,8 +18,8 @@ export default function Routes() {
   return (
     <Router>
       <div>
-        <nav>
-          <ul>
+        <nav className="container">
+          <ul className="text-left">
             <li>
               <Link to="/">Home</Link>
             </li>
@@ -34,7 +34,7 @@ export default function Routes() {
 
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
-        <div className="w-full bg-yellow-200 p-10">
+        <div className="w-full bg-gray-100 p-10">
           <Switch>
             <Route path="/checkout">
               <Checkout />
