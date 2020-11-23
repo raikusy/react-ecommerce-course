@@ -12,6 +12,7 @@
     "postcss": "^8.1.8",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-icons": "^3.11.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.0",
     "tailwindcss": "^2.0.1",
