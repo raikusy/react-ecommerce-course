@@ -1,3 +1,30 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+    .font-poppins {
+        font-family: 'Poppins', sans-serif;
+    }
+    .font-poppins-reg {
+        @apply font-poppins font-normal !important;
+    }
+    .font-poppins-bold {
+        @apply font-poppins font-bold !important;
+    }
+}
+
+@layer base {
+    body {
+        font-family: 'Lato', sans-serif;
+    }
+}
+
+/* @layer components {
+    .product_card {
+        @apply bg-white text-left;
+    }
+    .product-thumbnail img {
+        @apply w-full h-full;
+    }
+} */
