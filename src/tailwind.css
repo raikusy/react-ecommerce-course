@@ -6,9 +6,11 @@
     .font-poppins {
         font-family: 'Poppins', sans-serif;
     }
+    /* Poppins regular (400) font family class*/
     .font-poppins-reg {
         @apply font-poppins font-normal !important;
     }
+    /* Poppins bold (700) font family class */
     .font-poppins-bold {
         @apply font-poppins font-bold !important;
     }

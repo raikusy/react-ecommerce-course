@@ -1,9 +1,10 @@
 import clsx from 'clsx';
 import React from 'react';
 
-const Button = ({ children, size = false, varient = 'solid', className = '' }) => {
+const Button = ({ children, size = false, varient = 'solid', className = '', click = null }) => {
     return (
         <button
+            onClick={click && click}
             className={clsx(
                 'text-sm rounded focus:outline-none focus:ring focus:ring-green-200',
                 {
