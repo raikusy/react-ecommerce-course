@@ -2,7 +2,7 @@ import Routes from 'Routes';
 
 function App() {
   return (
-    <div className="p-10 bg-purple-500 text-center">
+    <div className="p-10 bg-gray-100 text-center">
       <Routes />
     </div>
   );

@@ -549,6 +549,10 @@ video {
   height: auto;
 }
 
+body {
+  font-family: 'Lato', sans-serif;
+}
+
 .container {
   width: 100%;
 }
@@ -32485,6 +32489,33 @@ video {
 .animate-bounce {
   animation: bounce 1s infinite;
 }
+
+.font-poppins {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Poppins regular (400) font family class*/
+
+.font-poppins-reg {
+  font-weight: 400 !important;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+/* Poppins bold (700) font family class */
+
+.font-poppins-bold {
+  font-weight: 700 !important;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+/* @layer components {
+    .product_card {
+        @apply bg-white text-left;
+    }
+    .product-thumbnail img {
+        @apply w-full h-full;
+    }
+} */
 
 @media (min-width: 640px) {
   .sm\:container {
