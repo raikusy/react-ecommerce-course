@@ -1,10 +1,10 @@
 import React from 'react';
-import ProductCardBottom from './Product Card/ProductCardBottom';
-import ProductCardTop from './Product Card/ProductCardTop';
+import ProductCardBottom from './product-card/ProductCardBottom';
+import ProductCardTop from './product-card/ProductCardTop';
 
 function ProductCard({ details, ...props }) {
   return (
-    <div className="product_card bg-white text-left rounded overflow-hidden hover:shadow-sm transition duration-200 transform hover:-translate-y-1">
+    <div className="overflow-hidden text-left transition duration-200 transform bg-white rounded product_card hover:shadow-sm hover:-translate-y-1">
       <ProductCardTop details={details} />
 
       <ProductCardBottom details={details} />
