@@ -26,7 +26,9 @@
     "prebuild": "run-s build:tailwind",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "eslintConfig": {
     "extends": [
@@ -47,6 +49,12 @@
     ]
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^6.1.8",
+    "@storybook/addon-essentials": "^6.1.8",
+    "@storybook/addon-links": "^6.1.8",
+    "@storybook/node-logger": "^6.1.8",
+    "@storybook/preset-create-react-app": "^3.1.5",
+    "@storybook/react": "^6.1.8",
     "chokidar-cli": "^2.1.0",
     "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-prettier": "^3.1.4",
