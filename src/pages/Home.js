@@ -1,48 +1,38 @@
-import Button from 'components/Button';
 import ProductCard from 'components/ProductCard';
 import React from 'react';
-import { BiCartAlt } from 'react-icons/bi';
-import img from '../img/product_thumb.jpg';
-
-const data = [
-  {
-    thumb: img,
-    title: 'A title for testing',
-    price: '$10',
-    discount: '$2',
-  },
-];
+import { FakeProducts, FakeCategorys } from './home/FakeData';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 const Home = () => {
+  console.log(FakeCategorys[0].thumb.default);
   return (
     <>
-      <div className="w-full bg-yellow-200 py-10">
-        <Button className="m-2" size="sm">
-          Button
-        </Button>
-        <Button className="m-2" size="md">
-          Button
-        </Button>
-        <Button className="m-2" size="lg">
-          Button
-        </Button>
-        <Button className="m-2 inline-flex items-center" size="sm">
-          <BiCartAlt />
-          Button
-        </Button>
-        <Button className="px-4 py-4" varient="outline">
-          <BiCartAlt />
-        </Button>
-        <Button className="m-2" size="sm">
-          Button
-        </Button>
+      <div className="products_category_slider p-7 w-full flex">
+        {/* Category card slider */}
+        <Swiper spaceBetween={15} slidesPerView={7}>
+          {FakeCategorys.length > 0 &&
+            FakeCategorys.map((item, index) => {
+              return (
+                <SwiperSlide key={index}>
+                  <div className="products_category_slider_card bg-white h-40 rounded-md cursor-pointer">
+                    {/* Thumbnail */}
+                    <div className="products_category_slider_card_image h-28 flex flex-row items-center justify-center mb-2.5 p-5">
+                      <img src={item.thumb} alt={item.title} />
+                    </div>
+                    {/* Title */}
+                    <span className="products_category_slider_card_title text-gray-800 text-center font-semibold">
+                      {item.title}
+                    </span>
+                  </div>
+                </SwiperSlide>
+              );
+            })}
+        </Swiper>
       </div>
-      <div className="products_cards_grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 mt-4">
-        <ProductCard details={data[0]} />
-        <ProductCard details={data[0]} />
-        <ProductCard details={data[0]} />
-        <ProductCard details={data[0]} />
-        <ProductCard details={data[0]} />
+
+      {/* Products card */}
+      <div className="products_cards_grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 px-7 pb-7">
+        {FakeProducts.length > 0 && FakeProducts.map((item, index) => <ProductCard details={item} key={index} />)}
       </div>
     </>
   );
