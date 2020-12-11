@@ -3,6 +3,7 @@ import React from 'react';
 import { FakeProducts, FakeCategorys } from './home/FakeData';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import CategoryCard from 'components/CategoryCard';
+import Button from 'components/Button';
 
 const Home = () => {
   console.log(FakeCategorys[0].thumb.default);
@@ -25,6 +26,12 @@ const Home = () => {
       {/* Products card */}
       <div className="products_cards_grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 px-7 pb-7">
         {FakeProducts.length > 0 && FakeProducts.map((item, index) => <ProductCard details={item} key={index} />)}
+      </div>
+
+      <div className="center pb-7">
+        <Button size="sm" varient="outline" className="text-green-600 font-bold border-none">
+          Load more
+        </Button>
       </div>
     </>
   );
