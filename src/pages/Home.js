@@ -2,6 +2,7 @@ import ProductCard from 'components/ProductCard';
 import React from 'react';
 import { FakeProducts, FakeCategorys } from './home/FakeData';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import CategoryCard from 'components/CategoryCard';
 
 const Home = () => {
   console.log(FakeCategorys[0].thumb.default);
@@ -14,16 +15,7 @@ const Home = () => {
             FakeCategorys.map((item, index) => {
               return (
                 <SwiperSlide key={index}>
-                  <div className="products_category_slider_card bg-white h-40 rounded-md cursor-pointer">
-                    {/* Thumbnail */}
-                    <div className="products_category_slider_card_image h-28 flex flex-row items-center justify-center mb-2.5 p-5">
-                      <img src={item.thumb} alt={item.title} />
-                    </div>
-                    {/* Title */}
-                    <span className="products_category_slider_card_title text-gray-800 text-center font-semibold">
-                      {item.title}
-                    </span>
-                  </div>
+                  <CategoryCard item={item} />
                 </SwiperSlide>
               );
             })}
