@@ -1,17 +1,38 @@
 import ProductCard from 'components/ProductCard';
-import React from 'react';
+import React, { useRef } from 'react';
 import { FakeProducts, FakeCategorys } from './home/FakeData';
 import { Swiper, SwiperSlide } from 'swiper/react';
+// import SwiperCore, { Navigation } from 'swiper'; // For swiper navigation
 import CategoryCard from 'components/CategoryCard';
 import Button from 'components/Button';
 
+// SwiperCore.use([Navigation]); // Active swiper navigation
 const Home = () => {
-  console.log(FakeCategorys[0].thumb.default);
+  // const navigationPrev = useRef(null); // Swiper navigation prev button
+  // const navigationNext = useRef(null); // Swiper navigation next button
   return (
     <>
-      <div className="products_category_slider p-7 w-full flex">
+      <div className="products_category_slider p-7 w-full flex relative">
         {/* Category card slider */}
-        <Swiper spaceBetween={15} slidesPerView={7}>
+        <Swiper
+          spaceBetween={15}
+          slidesPerView={2}
+          // navigation={{
+          //   prevEl: navigationPrev.current ? navigationPrev.current : undefined,
+          //   nextEl: navigationNext.current ? navigationNext.current : undefined,
+          // }}
+          breakpoints={{
+            640: {
+              slidesPerView: 4,
+            },
+            768: {
+              slidesPerView: 5,
+            },
+            1024: {
+              slidesPerView: 7,
+            },
+          }}
+        >
           {FakeCategorys.length > 0 &&
             FakeCategorys.map((item, index) => {
               return (
@@ -21,6 +42,12 @@ const Home = () => {
               );
             })}
         </Swiper>
+        {/* <button ref={navigationPrev} className="absolute inset-y-0.5 left-0 z-50">
+          Prev
+        </button>
+        <button ref={navigationNext} className="absolute inset-y-0.5 right-0 z-50">
+          Next
+        </button> */}
       </div>
 
       {/* Products card */}
